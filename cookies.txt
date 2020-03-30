@@ -1,0 +1,9 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+www.atm-newengland.com	TRUE	/	FALSE	1999999999	XSRF-TOKEN	1585497244|JT_iTkUfOBIv
+www.atm-newengland.com	TRUE	/	FALSE	1999999999	ssr-caching	cache,desc=miss,varnish=miss, dc,desc=42"
+www.atm-newengland.com	TRUE	/	FALSE	1999999999	hs	357076725
+www.atm-newengland.com	TRUE	/	FALSE	1999999999	svSession	1fed870471bd788538c16710ac89ce4826b6b3d85d1bbace29efae989eadd86e19cf4cdf0cd3c3374779aa66df4344f31e60994d53964e647acf431e4f798bcdd0e615568bcfcb348bdb6659eea00511eccc5567d866f19f26cfbb6f54af1bd8
+www.atm-newengland.com	TRUE	/	FALSE	1999999999	TS01e85bed	01f0e931313c19d6ffc7614cf41beb2be30e2a0b244f37675d459ee25212b286a185a8c84bfaf4c3cd31d259a5396a91743b90e8e4
+www.atm-newengland.com	TRUE	/	FALSE	1999999999	TS01ae6a94	01f0e931313c19d6ffc7614cf41beb2be30e2a0b244f37675d459ee25212b286a185a8c84bfaf4c3cd31d259a5396a91743b90e8e4
+
