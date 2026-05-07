@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free ATM Placement for Maine Dispensaries | ATM New England</title>
+  <meta name="description" content="Maine dispensaries can't accept card payments. ATM New England provides zero-cost ATM placement — we supply the machine, load the cash, and handle everything. 7-day support.">
+  <meta name="robots" content="index, follow">
+
+  <!-- GA4 — replace G-XXXXXXXXXX with your Measurement ID after setup -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX', { send_page_view: true });
+
+    // Capture UTM params from Google Ads click
+    (function() {
+      const params = new URLSearchParams(window.location.search);
+      const utmData = {};
+      ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','gclid'].forEach(k => {
+        if (params.get(k)) utmData[k] = params.get(k);
+      });
+      if (Object.keys(utmData).length) {
+        sessionStorage.setItem('utm_data', JSON.stringify(utmData));
+        gtag('event', 'ad_landing', utmData);
+      }
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #080d08;
+      --surface:  #111811;
+      --surface2: #192019;
+      --gold:     #c8a84b;
+      --gold-lt:  #e2c574;
+      --text:     #f2f2ee;
+      --muted:    #7a8c7a;
+      --border:   #243024;
+      --radius:   8px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* ── HEADER ── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(8,13,8,0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+    }
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .logo img { height: 38px; }
+    .header-phone {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--gold);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.05rem;
+      letter-spacing: 0.02em;
+    }
+    .header-phone:hover { color: var(--gold-lt); }
+    .phone-icon {
+      width: 18px; height: 18px;
+      fill: none; stroke: currentColor;
+      stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 80px 24px 72px;
+      text-align: center;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(40,80,40,0.25) 0%, transparent 70%),
+        var(--bg);
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      background: rgba(200,168,75,0.12);
+      border: 1px solid rgba(200,168,75,0.3);
+      color: var(--gold);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 100px;
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      line-height: 1.05;
+      letter-spacing: 0.02em;
+      max-width: 820px;
+      margin: 0 auto 24px;
+    }
+    .hero h1 span { color: var(--gold); }
+    .hero-sub {
+      font-size: clamp(1rem, 2.2vw, 1.2rem);
+      color: #b0c4b0;
+      max-width: 580px;
+      margin: 0 auto 40px;
+    }
+    .cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: center;
+    }
+    .btn-primary {
+      background: var(--gold);
+      color: #0a0d0a;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 14px 32px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: var(--gold-lt); transform: translateY(-1px); }
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 14px 32px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: border-color 0.2s, color 0.2s;
+      display: inline-block;
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* ── TRUST BAR ── */
+    .trust-bar {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+      padding: 18px 24px;
+    }
+    .trust-bar-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 32px;
+      justify-content: center;
+      align-items: center;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.88rem;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .trust-item svg {
+      width: 16px; height: 16px;
+      stroke: var(--gold); fill: none;
+      stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+      flex-shrink: 0;
+    }
+
+    /* ── SECTION WRAPPER ── */
+    section { padding: 80px 24px; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      line-height: 1.1;
+      letter-spacing: 0.02em;
+      margin-bottom: 16px;
+    }
+    .section-body {
+      font-size: 1.05rem;
+      color: #a0b4a0;
+      max-width: 560px;
+      margin-bottom: 40px;
+    }
+
+    /* ── PROBLEM ── */
+    .problem { background: var(--surface); }
+    .problem-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px 60px;
+      align-items: center;
+    }
+    .problem-img {
+      border-radius: 12px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+    }
+    .problem-img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .problem-points { list-style: none; display: flex; flex-direction: column; gap: 18px; }
+    .problem-point {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .point-icon {
+      flex-shrink: 0;
+      width: 36px; height: 36px;
+      background: rgba(200,168,75,0.1);
+      border: 1px solid rgba(200,168,75,0.25);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .point-icon svg {
+      width: 18px; height: 18px;
+      stroke: var(--gold); fill: none;
+      stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+    }
+    .point-text strong { display: block; color: var(--text); margin-bottom: 3px; }
+    .point-text span { font-size: 0.92rem; color: var(--muted); }
+
+    /* ── HOW IT WORKS ── */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .step {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px 24px;
+    }
+    .step-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3rem;
+      line-height: 1;
+      color: rgba(200,168,75,0.2);
+      margin-bottom: 12px;
+    }
+    .step h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 8px; }
+    .step p { font-size: 0.92rem; color: var(--muted); line-height: 1.5; }
+
+    /* ── PLANS ── */
+    .plans-bg { background: var(--surface); }
+    .plans-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 48px;
+    }
+    .plan-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px 28px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+    .plan-card.featured {
+      border-color: var(--gold);
+      background: var(--surface2);
+    }
+    .plan-badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--gold);
+      color: #0a0d0a;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 100px;
+      white-space: nowrap;
+    }
+    .plan-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.7rem;
+      letter-spacing: 0.04em;
+      margin-bottom: 6px;
+    }
+    .plan-tagline { font-size: 0.9rem; color: var(--muted); margin-bottom: 24px; }
+    .plan-features { list-style: none; flex: 1; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+    .plan-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.93rem;
+    }
+    .plan-feature svg {
+      flex-shrink: 0;
+      width: 16px; height: 16px;
+      stroke: var(--gold); fill: none;
+      stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round;
+      margin-top: 3px;
+    }
+
+    /* ── GALLERY ── */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 48px;
+    }
+    .gallery-item {
+      border-radius: 10px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      background: var(--surface);
+    }
+    .gallery-item img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s;
+    }
+    .gallery-item:hover img { transform: scale(1.04); }
+
+    /* ── CONTACT ── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+      margin-top: 48px;
+    }
+    .contact-info h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+    }
+    .contact-info p { color: var(--muted); margin-bottom: 28px; font-size: 0.95rem; }
+    .contact-cta-phone {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-bottom: 14px;
+      transition: border-color 0.2s;
+    }
+    .contact-cta-phone:hover { border-color: var(--gold); }
+    .contact-cta-phone .icon {
+      width: 40px; height: 40px;
+      background: rgba(200,168,75,0.12);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-cta-phone .icon svg {
+      width: 20px; height: 20px;
+      stroke: var(--gold); fill: none;
+      stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+    }
+    .contact-cta-phone .label { font-size: 0.8rem; color: var(--muted); }
+    .contact-cta-phone .value { font-weight: 600; color: var(--text); font-size: 1.05rem; }
+
+    /* form */
+    .contact-form { display: flex; flex-direction: column; gap: 14px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .field { display: flex; flex-direction: column; gap: 6px; }
+    .field label { font-size: 0.82rem; font-weight: 500; color: var(--muted); }
+    .field input,
+    .field textarea,
+    .field select {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      padding: 11px 14px;
+      transition: border-color 0.2s;
+      outline: none;
+      width: 100%;
+    }
+    .field input:focus,
+    .field textarea:focus,
+    .field select:focus { border-color: var(--gold); }
+    .field input::placeholder,
+    .field textarea::placeholder { color: #3a4a3a; }
+    .field textarea { resize: vertical; min-height: 110px; }
+    .field select option { background: var(--surface); }
+    .form-submit { margin-top: 4px; }
+    .form-note { font-size: 0.8rem; color: var(--muted); margin-top: 8px; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 32px 24px;
+    }
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-logo img { height: 30px; }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a {
+      font-size: 0.88rem;
+      color: var(--muted);
+      text-decoration: none;
+    }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-copy { font-size: 0.82rem; color: var(--muted); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 860px) {
+      .problem-grid,
+      .contact-grid { grid-template-columns: 1fr; }
+      .problem-img { order: -1; }
+      .plans-grid { grid-template-columns: 1fr; max-width: 440px; margin-left: auto; margin-right: auto; }
+      .steps { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 500px) {
+      section { padding: 56px 20px; }
+      .hero { padding: 56px 20px 52px; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .footer-inner { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="header-inner">
+    <a href="/" class="logo"><img src="logo.webp" alt="ATM New England"></a>
+    <a href="tel:+18003241699" class="header-phone"
+       onclick="gtag('event','phone_click',{location:'header',page:'dispensary'})">
+      <svg class="phone-icon" viewBox="0 0 24 24">
+        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.73 9.5 19.79 19.79 0 01.67 5.07 2 2 0 012.65 3H5.7a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.61 10.9a16 16 0 006.07 6.07l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+      </svg>
+      800.324.1699
+    </a>
+  </div>
+</header>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <p class="hero-eyebrow">Maine Dispensaries &amp; Card-Restricted Retail</p>
+  <h1>Your Customers<br>Can't Pay With Cards.<br><span>We Fix That.</span></h1>
+  <p class="hero-sub">Zero-cost ATM placement for dispensaries. We supply the machine, load the cash, and handle everything. Your customers always have what they need.</p>
+  <div class="cta-group">
+    <a href="#contact" class="btn-primary"
+       onclick="gtag('event','cta_click',{cta:'get_free_atm',location:'hero',page:'dispensary'})">
+      Get Free ATM Placement
+    </a>
+    <a href="tel:+18003241699" class="btn-outline"
+       onclick="gtag('event','phone_click',{location:'hero',page:'dispensary'})">
+      Call 800.324.1699
+    </a>
+  </div>
+</section>
+
+<!-- ── TRUST BAR ── -->
+<div class="trust-bar">
+  <div class="trust-bar-inner">
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Fully Licensed &amp; Insured
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      7-Day Support
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+      20+ Years Experience
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Maine-Based &amp; Local
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+      Zero Cost to You
+    </div>
+  </div>
+</div>
+
+<!-- ── PROBLEM ── -->
+<section class="problem">
+  <div class="container">
+    <div class="problem-grid">
+      <div>
+        <p class="section-label">The Problem</p>
+        <h2 class="section-title">Dispensaries Are<br>Locked Out of Card Processing</h2>
+        <p class="section-body">Federal banking restrictions prevent most dispensaries from accepting credit or debit cards. That's not changing anytime soon — but your customers still need to pay.</p>
+        <ul class="problem-points">
+          <li class="problem-point">
+            <div class="point-icon">
+              <svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            </div>
+            <div class="point-text">
+              <strong>Card processors won't work with dispensaries</strong>
+              <span>Federal law classifies it as a controlled substance transaction. Banks pass.</span>
+            </div>
+          </li>
+          <li class="problem-point">
+            <div class="point-icon">
+              <svg viewBox="0 0 24 24"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+            </div>
+            <div class="point-text">
+              <strong>Customers without cash leave empty-handed</strong>
+              <span>Every sale you lose to "I don't have cash" is money walking out the door.</span>
+            </div>
+          </li>
+          <li class="problem-point">
+            <div class="point-icon">
+              <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+            </div>
+            <div class="point-text">
+              <strong>An on-site ATM closes the gap instantly</strong>
+              <span>Customers withdraw cash right in your store and complete the purchase. No lost sales.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="problem-img">
+        <img src="dunkinATM.webp" alt="ATM installed in a retail location">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW IT WORKS ── -->
+<section>
+  <div class="container">
+    <p class="section-label">How It Works</p>
+    <h2 class="section-title">We Handle Everything.</h2>
+    <p class="section-body">From installation to maintenance to cash loading — our Full Placement plan puts an ATM in your dispensary at zero cost to you.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h3>Free Consultation</h3>
+        <p>We assess your location, traffic, and layout. Pick a plan. We handle the paperwork.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h3>We Install &amp; Stock</h3>
+        <p>We deliver, install, and load the machine with cash. You do nothing. Usually done within days of signing.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h3>It Runs. You Profit.</h3>
+        <p>Your customers use the ATM. Cash flows into your registers. We handle restocking, maintenance, and support — 7 days a week.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PLANS ── -->
+<section class="plans-bg">
+  <div class="container">
+    <p class="section-label">Pricing Plans</p>
+    <h2 class="section-title">Choose What Works For You</h2>
+    <p class="section-body">All plans include fully licensed and insured machines, 7-day support, and zero service fees. Fully customizable.</p>
+    <div class="plans-grid">
+
+      <div class="plan-card">
+        <div class="plan-name">Full Placement</div>
+        <div class="plan-tagline">Best for most dispensaries</div>
+        <ul class="plan-features">
+          <li class="plan-feature">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Zero down — we supply the machine
+          </li>
+          <li class="plan-feature">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            We vault &amp; load cash with our capital
+          </li>
+          <li class="plan-feature">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            No service or maintenance fees
+          </li>
+          <li class="plan-feature">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Fully licensed &amp; insured
+          </li>
+          <li class="plan-feature">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Free 7-day customer support
+          </li>
+        </ul>
+        <a href="#contact" class="btn-outline"
+           onclick="gtag('event','cta_click',{cta:'plan_full',location:'plans',page:'dispensary'})">
+          Get Started
+        </a>
+      </div>
+
+      <div class="plan-card featured">
+        <div class="plan-badge">Most Popular</div>
+        <div class="plan-name">Owner Operated</div>
+        <div class="plan-tagline">Maximum revenue share</div>
+        <ul class="plan-features">
+          <li class="plan-feature">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            You purchase the machine (we source it)
+          </li>
+          <li class="plan-feature">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            You load cash with your capital
+          </li>
+          <li class="plan-feature">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Keep the majority of transaction fees
+          </li>
+          <li class="plan-feature">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Low to no maintenance costs
+          </li>
+          <li class="plan-feature">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Fully licensed &amp; free support
+          </li>
+        </ul>
+        <a href="#contact" class="btn-primary"
+           onclick="gtag('event','cta_click',{cta:'plan_owner',location:'plans',page:'dispensary'})">
+          Get Started
+        </a>
+      </div>
+
+      <div class="plan-card">
+        <div class="plan-name">50/50 Placement</div>
+        <div class="plan-tagline">Split the upside</div>
+        <ul class="plan-features">
+          <li class="plan-feature">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Zero down — we supply the machine
+          </li>
+          <li class="plan-feature">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            You load cash with your capital
+          </li>
+          <li class="plan-feature">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            No service or maintenance fees
+          </li>
+          <li class="plan-feature">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Share transaction fee revenue 50/50
+          </li>
+          <li class="plan-feature">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Fully licensed &amp; free support
+          </li>
+        </ul>
+        <a href="#contact" class="btn-outline"
+           onclick="gtag('event','cta_click',{cta:'plan_5050',location:'plans',page:'dispensary'})">
+          Get Started
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── GALLERY ── -->
+<section>
+  <div class="container">
+    <p class="section-label">Real Installations</p>
+    <h2 class="section-title">ATMs We've Placed Across New England</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="oobATM.webp" alt="ATM installation at Old Orchard Beach"></div>
+      <div class="gallery-item"><img src="westbrookATM.webp" alt="ATM installation in Westbrook ME"></div>
+      <div class="gallery-item"><img src="girlATM.webp" alt="Customer using ATM"></div>
+      <div class="gallery-item"><img src="guyATM.webp" alt="Customer at ATM"></div>
+      <div class="gallery-item"><img src="hyosungForce.webp" alt="Hyosung Force ATM machine"></div>
+      <div class="gallery-item"><img src="nautilusHalo2.webp" alt="Nautilus Halo 2 ATM machine"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section class="plans-bg" id="contact">
+  <div class="container">
+    <p class="section-label">Get Started</p>
+    <h2 class="section-title">Free Consultation.<br>No Obligation.</h2>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Talk to us directly</h3>
+        <p>We're Maine-based and pick up the phone. Call, or fill out the form and we'll reach out within one business day.</p>
+        <a href="tel:+18003241699" class="contact-cta-phone"
+           onclick="gtag('event','phone_click',{location:'contact',page:'dispensary'})">
+          <div class="icon">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.73 9.5 19.79 19.79 0 01.67 5.07 2 2 0 012.65 3H5.7a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.61 10.9a16 16 0 006.07 6.07l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div>
+            <div class="label">Call us</div>
+            <div class="value">800.324.1699</div>
+          </div>
+        </a>
+        <a href="mailto:AtmNewEngland1@gmail.com" class="contact-cta-phone"
+           onclick="gtag('event','email_click',{location:'contact',page:'dispensary'})">
+          <div class="icon">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <div class="label">Email us</div>
+            <div class="value">AtmNewEngland1@gmail.com</div>
+          </div>
+        </a>
+      </div>
+
+      <form
+        class="contact-form"
+        name="dispensary-contact"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        onsubmit="
+          const utmData = JSON.parse(sessionStorage.getItem('utm_data') || '{}');
+          gtag('event','form_submit',{form:'dispensary_contact',page:'dispensary',...utmData});
+        "
+      >
+        <input type="hidden" name="form-name" value="dispensary-contact">
+        <input type="hidden" name="page" value="dispensary">
+        <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Your name" required>
+          </div>
+          <div class="field">
+            <label for="business">Business Name</label>
+            <input id="business" name="business" type="text" placeholder="Your dispensary" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required>
+          </div>
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" placeholder="207-555-0100">
+          </div>
+        </div>
+        <div class="field">
+          <label for="plan">Plan you're interested in</label>
+          <select id="plan" name="plan">
+            <option value="">Not sure yet</option>
+            <option value="full-placement">Full Placement — zero cost, we handle everything</option>
+            <option value="owner-operated">Owner Operated — I buy the machine</option>
+            <option value="50-50">50/50 Placement — split the fees</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="message">Anything else we should know? (optional)</label>
+          <textarea id="message" name="message" placeholder="Location, current setup, questions…"></textarea>
+        </div>
+        <button
+          type="submit"
+          class="btn-primary form-submit"
+          onclick="gtag('event','form_open',{form:'dispensary_contact',page:'dispensary'})"
+        >
+          Request Free Consultation
+        </button>
+        <p class="form-note">No spam. No pressure. We'll reach out within one business day.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo"><img src="logo.webp" alt="ATM New England"></div>
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/plans.html">Plans</a>
+      <a href="/about-us.html">About</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+    <p class="footer-copy">&copy; 2025 ATM New England &mdash; Gorham, ME &nbsp;|&nbsp; 800.324.1699</p>
+  </div>
+</footer>
+
+</body>
+</html>
