@@ -7,6 +7,10 @@
   <meta name="description" content="Maine dispensaries can't accept card payments. ATM New England provides zero-cost ATM placement — we supply the machine, load the cash, and handle everything. 7-day support.">
   <meta name="robots" content="index, follow">
 
+  <link rel="preload" href="fonts/bebas-neue.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="fonts/fonts.css">
+
   <!-- GA4 — replace G-XXXXXXXXXX with your Measurement ID after setup -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
@@ -28,12 +32,7 @@
       }
     })();
   </script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
-  <style>
+<style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
@@ -495,7 +494,7 @@
 <!-- ── HEADER ── -->
 <header>
   <div class="header-inner">
-    <a href="/" class="logo"><img src="logo.png" alt="ATM New England"></a>
+    <a href="/" class="logo"><img loading="lazy" src="logo.webp" alt="ATM New England"></a>
     <a href="tel:+18003241699" class="header-phone"
        onclick="gtag('event','phone_click',{location:'header',page:'dispensary'})">
       <svg class="phone-icon" viewBox="0 0 24 24">
@@ -599,7 +598,7 @@
         </ul>
       </div>
       <div class="problem-img">
-        <img src="grand-victor-atm.jpg" alt="ATM installed in a retail location">
+        <img loading="eager" src="grand-victor-atm.webp" alt="ATM installed in a retail location">
       </div>
     </div>
   </div>
@@ -743,12 +742,12 @@
     <p class="section-label">Real Installations</p>
     <h2 class="section-title">ATMs We've Placed Across New England</h2>
     <div class="gallery-grid">
-      <div class="gallery-item"><img src="oob-booth-atm.jpg" alt="ATM installation at Old Orchard Beach"></div>
-      <div class="gallery-item"><img src="branded-atm-enclosure.jpg" alt="ATM installation in Westbrook ME"></div>
-      <div class="gallery-item"><img src="event-crowd-atm.jpg" alt="Customer using ATM"></div>
-      <div class="gallery-item"><img src="atm-inside.jpg" alt="Customer at ATM"></div>
-      <div class="gallery-item"><img src="hyosungForce.webp" alt="Hyosung Force ATM machine"></div>
-      <div class="gallery-item"><img src="nautilusHalo2.webp" alt="Nautilus Halo 2 ATM machine"></div>
+      <div class="gallery-item"><img loading="lazy" src="oob-booth-atm.webp" alt="ATM installation at Old Orchard Beach"></div>
+      <div class="gallery-item"><img loading="lazy" src="branded-atm-enclosure.webp" alt="ATM installation in Westbrook ME"></div>
+      <div class="gallery-item"><img loading="lazy" src="event-crowd-atm.webp" alt="Customer using ATM"></div>
+      <div class="gallery-item"><img loading="lazy" src="atm-inside.webp" alt="Customer at ATM"></div>
+      <div class="gallery-item"><img loading="lazy" src="hyosungForce.webp" alt="Hyosung Force ATM machine"></div>
+      <div class="gallery-item"><img loading="lazy" src="nautilusHalo2.webp" alt="Nautilus Halo 2 ATM machine"></div>
     </div>
   </div>
 </section>
@@ -848,7 +847,7 @@
 <!-- ── FOOTER ── -->
 <footer>
   <div class="footer-inner">
-    <div class="footer-logo"><img src="logo.png" alt="ATM New England"></div>
+    <div class="footer-logo"><img loading="lazy" src="logo.webp" alt="ATM New England"></div>
     <div class="footer-links">
       <a href="/">Home</a>
       <a href="/plans.html">Plans</a>

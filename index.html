@@ -7,6 +7,10 @@
   <meta name="description" content="ATM New England provides nationwide ATM sales, service, and processing. Zero-down placement, fully licensed, 7-day support. Serving New England businesses for 20+ years.">
   <meta name="robots" content="index, follow">
 
+  <link rel="preload" href="fonts/bebas-neue.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="fonts/fonts.css">
+
   <!-- GA4 — replace G-XXXXXXXXXX with your Measurement ID after setup -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
@@ -27,12 +31,7 @@
       }
     })();
   </script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
-  <style>
+<style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
@@ -269,7 +268,7 @@
 
 <header>
   <div class="header-inner">
-    <a href="/" class="logo"><img src="logo.png" alt="ATM New England"></a>
+    <a href="/" class="logo"><img loading="lazy" src="logo.webp" alt="ATM New England"></a>
     <nav>
       <a href="/" class="active">Home</a>
       <a href="about-us.html">About</a>
@@ -308,8 +307,8 @@
       </div>
     </div>
     <div class="hero-visual">
-      <div class="hero-img-main"><img src="grand-victor-atm.jpg" alt="ATM installed at a New England business"></div>
-      <div class="hero-img-sm"><img src="event-crowd-atm.jpg" alt="ATM in retail setting"></div>
+      <div class="hero-img-main"><img loading="eager" src="grand-victor-atm.webp" alt="ATM installed at a New England business"></div>
+      <div class="hero-img-sm"><img loading="lazy" src="event-crowd-atm.webp" alt="ATM in retail setting"></div>
       <div class="hero-stat"><div class="num">20+</div><div class="label">Years serving<br>New England</div></div>
     </div>
   </div>
@@ -357,19 +356,19 @@
     <p class="section-body">If your customers need cash, we have a plan for you.</p>
     <div class="serve-grid">
       <div class="serve-card">
-        <div class="serve-img"><img src="oob-booth-atm.jpg" alt="Retail foot traffic"></div>
+        <div class="serve-img"><img loading="lazy" src="oob-booth-atm.webp" alt="Retail foot traffic"></div>
         <div class="serve-label">Retail &amp; Convenience<div class="serve-sub">Increase basket size</div></div>
       </div>
       <div class="serve-card">
-        <div class="serve-img"><img src="branded-atm-enclosure.jpg" alt="Bar and restaurant"></div>
+        <div class="serve-img"><img loading="lazy" src="branded-atm-enclosure.webp" alt="Bar and restaurant"></div>
         <div class="serve-label">Bars &amp; Restaurants<div class="serve-sub">Capture cash-only tips</div></div>
       </div>
       <div class="serve-card">
-        <div class="serve-img"><img src="event-crowd-atm.jpg" alt="Dispensary ATM"></div>
+        <div class="serve-img"><img loading="lazy" src="event-crowd-atm.webp" alt="Dispensary ATM"></div>
         <div class="serve-label">Dispensaries<div class="serve-sub">Solve card restrictions</div></div>
       </div>
       <div class="serve-card">
-        <div class="serve-img"><img src="atm-inside.jpg" alt="Hotel ATM"></div>
+        <div class="serve-img"><img loading="lazy" src="atm-inside.webp" alt="Hotel ATM"></div>
         <div class="serve-label">Hotels &amp; Lodging<div class="serve-sub">Convenient guest cash</div></div>
       </div>
     </div>
@@ -439,15 +438,15 @@
     <p class="section-body">Hyosung, Nautilus, and Triton — built for high-traffic New England environments.</p>
     <div class="models-grid">
       <div class="model-card">
-        <div class="model-img"><img src="hyosungForce.webp" alt="Hyosung Force ATM"></div>
+        <div class="model-img"><img loading="lazy" src="hyosungForce.webp" alt="Hyosung Force ATM"></div>
         <div class="model-info"><h3>Hyosung Force</h3><p>High-capacity, indoor/outdoor capable.</p></div>
       </div>
       <div class="model-card">
-        <div class="model-img"><img src="nautilusHalo2.webp" alt="Nautilus Halo 2 ATM"></div>
+        <div class="model-img"><img loading="lazy" src="nautilusHalo2.webp" alt="Nautilus Halo 2 ATM"></div>
         <div class="model-info"><h3>Nautilus Halo 2</h3><p>Touchscreen display, ADA compliant.</p></div>
       </div>
       <div class="model-card">
-        <div class="model-img"><img src="tritonArgo12.webp" alt="Triton Argo ATM"></div>
+        <div class="model-img"><img loading="lazy" src="tritonArgo12.webp" alt="Triton Argo ATM"></div>
         <div class="model-info"><h3>Triton Argo</h3><p>Compact footprint, perfect for tight spaces.</p></div>
       </div>
     </div>
@@ -472,7 +471,7 @@
   <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <img src="logo.png" alt="ATM New England">
+        <img loading="lazy" src="logo.webp" alt="ATM New England">
         <p>Maine-based ATM sales, service, and processing. Serving New England businesses for over 20 years.</p>
         <p style="margin-top:10px">PO Box 748, Gorham ME 04038</p>
       </div>
