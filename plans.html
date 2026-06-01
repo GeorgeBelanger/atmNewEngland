@@ -357,5 +357,18 @@
   </div>
 </footer>
 
+
+<script>
+  (function(){
+    var btn = document.querySelector('.hamburger');
+    var nav = document.getElementById('mobileNav');
+    if(btn && nav){
+      btn.addEventListener('click', function(){
+        btn.classList.toggle('open');
+        nav.classList.toggle('open');
+      });
+    }
+  })();
+</script>
 </body>
 </html>
